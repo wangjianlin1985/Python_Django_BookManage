@@ -1,0 +1,30 @@
+{% include 'check_logstate.html' %}
+{% load staticfiles %}
+
+ <link rel="stylesheet" type="text/css" href="{% static 'css/readerType.css' %}" />
+<div id="readerTypeAddDiv">
+    {% csrf_token %}
+	<form id="readerTypeAddForm" enctype="multipart/form-data"  method="post">
+		<div>
+			<span class="label">读者类型:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="readerType_readerTypeName" name="readerType.readerTypeName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">可借阅数目:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="readerType_number" name="readerType.number" style="width:80px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="readerTypeAddButton" class="easyui-linkbutton">添加</a>
+			<a id="readerTypeClearButton" class="easyui-linkbutton">重填</a>
+		</div> 
+	</form>
+</div>
+<script src="{% static 'js/ReaderType/readerType_add.js' %}"></script>

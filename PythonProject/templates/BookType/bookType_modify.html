@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bookType.css' %}" />
+<div id="bookType_EditDiv">
+	<form id="bookTypeModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">图书类别:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="bookType_bookTypeId_modify" name="bookType.bookTypeId" value="{{ bookTypeId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">类别名称:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="bookType_bookTypeName_modify" name="bookType.bookTypeName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">可借阅天数:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="bookType_days_modify" name="bookType.days" style="width:80px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="bookTypeModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/BookType/bookType_modify.js' %}"></script>

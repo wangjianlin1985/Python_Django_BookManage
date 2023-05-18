@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/readerType.css' %}" />
+<div id="readerType_EditDiv">
+	<form id="readerTypeModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">读者类型编号:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="readerType_readerTypeId_modify" name="readerType.readerTypeId" value="{{ readerTypeId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">读者类型:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="readerType_readerTypeName_modify" name="readerType.readerTypeName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">可借阅数目:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="readerType_number_modify" name="readerType.number" style="width:80px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="readerTypeModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/ReaderType/readerType_modify.js' %}"></script>
